@@ -38,10 +38,10 @@ int main(void)
     scanf("%lf", &r);
     
     double circumference = 2*pie*r;
-    double area =  pie*r*r;
+    double area =  pie*pow(r,2);
 
     printf("Circumference of the Circle = %.2lf\n",circumference);
-    printf("Area of the Circle = %.2lf\n\n",area);
+    printf("Area of the Circle = %.2lf %% \n\n",area);
 
     //Question 5
 
@@ -113,7 +113,7 @@ int main(void)
 
     printf("The total score is %.2f\n", totalscore);
     printf("The average score is %.2f\n", averagescore);
-    printf("The overall score is %.2f\% \n\n", overallpercentage);
+    printf("The overall score is %.2f\n\n", overallpercentage);
         
     //Question 9
         //27
@@ -125,7 +125,12 @@ int main(void)
         printf("y1 :"); scanf("%lf", &y1);
         printf("x2 :"); scanf("%lf", &x2);
         printf("y2 :"); scanf("%lf", &y2);
-        double distance = ((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2)); //sqr does not work for some reason
-        printf("The distance is sqr%.2f\n", distance);
+        double distance = sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
+        printf("The distance is %.2f\n", distance);
+
+        // math.h works because the run command requires the link path
+            // the command changed from this "cd "/workspaces/tutorial2_sdn150s/" && gcc main.c -o main && "/workspaces/tutorial2_sdn150s/"main"
+            // to this "cd "/workspaces/tutorial2_sdn150s/" && gcc -o main main.c -L/usr/bin/gcc -lm && "/workspaces/tutorial2_sdn150s/"main"
+
     
 }
